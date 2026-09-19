@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdaptationRouteImport } from './routes/adaptation'
+import { Route as AssessmentRouteImport } from './routes/assessment'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as PracticeRouteImport } from './routes/practice'
+import { Route as ProgressRouteImport } from './routes/progress'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as SetupRouteImport } from './routes/setup'
+import { Route as UploadRouteImport } from './routes/upload'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdaptationRoute = AdaptationRouteImport.update({
+  id: '/adaptation',
+  path: '/adaptation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssessmentRoute = AssessmentRouteImport.update({
+  id: '/assessment',
+  path: '/assessment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticeRoute = PracticeRouteImport.update({
+  id: '/practice',
+  path: '/practice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressRoute = ProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SetupRoute = SetupRouteImport.update({
+  id: '/setup',
+  path: '/setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UploadRoute = UploadRouteImport.update({
+  id: '/upload',
+  path: '/upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/adaptation': typeof AdaptationRoute
+  '/assessment': typeof AssessmentRoute
+  '/dashboard': typeof DashboardRoute
+  '/practice': typeof PracticeRoute
+  '/progress': typeof ProgressRoute
+  '/roadmap': typeof RoadmapRoute
+  '/setup': typeof SetupRoute
+  '/upload': typeof UploadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/adaptation': typeof AdaptationRoute
+  '/assessment': typeof AssessmentRoute
+  '/dashboard': typeof DashboardRoute
+  '/practice': typeof PracticeRoute
+  '/progress': typeof ProgressRoute
+  '/roadmap': typeof RoadmapRoute
+  '/setup': typeof SetupRoute
+  '/upload': typeof UploadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/adaptation': typeof AdaptationRoute
+  '/assessment': typeof AssessmentRoute
+  '/dashboard': typeof DashboardRoute
+  '/practice': typeof PracticeRoute
+  '/progress': typeof ProgressRoute
+  '/roadmap': typeof RoadmapRoute
+  '/setup': typeof SetupRoute
+  '/upload': typeof UploadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/adaptation'
+    | '/assessment'
+    | '/dashboard'
+    | '/practice'
+    | '/progress'
+    | '/roadmap'
+    | '/setup'
+    | '/upload'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/adaptation'
+    | '/assessment'
+    | '/dashboard'
+    | '/practice'
+    | '/progress'
+    | '/roadmap'
+    | '/setup'
+    | '/upload'
+  id:
+    | '__root__'
+    | '/'
+    | '/adaptation'
+    | '/assessment'
+    | '/dashboard'
+    | '/practice'
+    | '/progress'
+    | '/roadmap'
+    | '/setup'
+    | '/upload'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdaptationRoute: typeof AdaptationRoute
+  AssessmentRoute: typeof AssessmentRoute
+  DashboardRoute: typeof DashboardRoute
+  PracticeRoute: typeof PracticeRoute
+  ProgressRoute: typeof ProgressRoute
+  RoadmapRoute: typeof RoadmapRoute
+  SetupRoute: typeof SetupRoute
+  UploadRoute: typeof UploadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/adaptation': {
+      id: '/adaptation'
+      path: '/adaptation'
+      fullPath: '/adaptation'
+      preLoaderRoute: typeof AdaptationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assessment': {
+      id: '/assessment'
+      path: '/assessment'
+      fullPath: '/assessment'
+      preLoaderRoute: typeof AssessmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practice': {
+      id: '/practice'
+      path: '/practice'
+      fullPath: '/practice'
+      preLoaderRoute: typeof PracticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress': {
+      id: '/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof ProgressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/setup': {
+      id: '/setup'
+      path: '/setup'
+      fullPath: '/setup'
+      preLoaderRoute: typeof SetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upload': {
+      id: '/upload'
+      path: '/upload'
+      fullPath: '/upload'
+      preLoaderRoute: typeof UploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdaptationRoute: AdaptationRoute,
+  AssessmentRoute: AssessmentRoute,
+  DashboardRoute: DashboardRoute,
+  PracticeRoute: PracticeRoute,
+  ProgressRoute: ProgressRoute,
+  RoadmapRoute: RoadmapRoute,
+  SetupRoute: SetupRoute,
+  UploadRoute: UploadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
