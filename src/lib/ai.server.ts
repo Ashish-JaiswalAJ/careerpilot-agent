@@ -4,7 +4,7 @@ const MODEL = "google/gemini-3.8-flash";
 function stripFences(text: string): string {
   const trimmed = text.trim();
   const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const body = fenced ? fenced[1] : trimmed;
+  const body: string = fenced?.[1] ?? trimmed;
   const start = body.search(/[[{]/);
   if (start === -1) return body;
   const lastObj = body.lastIndexOf("}");
