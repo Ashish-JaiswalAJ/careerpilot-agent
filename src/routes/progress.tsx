@@ -99,7 +99,7 @@ function ProgressPage() {
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-5">
-        <section className="panel p-6 lg:col-span-2">
+        <section className="panel h-fit space-y-4 p-6 lg:col-span-2">
           <h2 className="font-display text-lg">Completion</h2>
           <div className="h-56">
             <ResponsiveContainer width="100%" height="100%">
